@@ -6,3 +6,4 @@ D:\Certificacion\PracticaPrueba\Practica2\Logic\bin\Debug\netcoreapp3.1\Logic.pd
 D:\Certificacion\PracticaPrueba\Practica2\Logic\obj\Debug\netcoreapp3.1\Logic.dll
 D:\Certificacion\PracticaPrueba\Practica2\Logic\obj\Debug\netcoreapp3.1\Logic.pdb
 D:\Certificacion\PracticaPrueba\Practica2\Logic\obj\Debug\netcoreapp3.1\Logic.csproj.CoreCompileInputs.cache
+D:\Certificacion\PracticaPrueba\Practica2\Logic\obj\Debug\netcoreapp3.1\Logic.csprojAssemblyReference.cache
