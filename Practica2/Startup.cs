@@ -35,14 +35,14 @@ namespace Practica2
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Practice 2",
-                    Description = "A simple example ASP.NET Core Web API",
+                    Title = "Practice 2 - Hospital Paso Al Infierno",
+                    Description = "HELL TO PASS SP",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "Shayne Boyer",
+                        Name = "Ignacio Cossio",
                         Email = string.Empty,
-                        Url = new Uri("https://twitter.com/spboyer"),
+                        Url = new Uri("https://www.theinfiniteapps.com/"),
                     },
                     License = new OpenApiLicense
                     {
