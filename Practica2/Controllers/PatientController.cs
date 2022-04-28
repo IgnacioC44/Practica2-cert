@@ -12,17 +12,42 @@ namespace Practica2.Controllers
     [Route("[controller]")]
     public class PatientController : ControllerBase
     {
-        public  PatientController()
+        private PatientManager _patientManager;
+        public  PatientController(PatientManager patientManager)
         {
-
+            _patientManager = patientManager;
         }
 
         [HttpGet]
-        public IActionResult GetPatient()
+        public IActionResult GetPatients()
         {
-            List<Patient> retrievedPatients = new List<Patient>();
-            retrievedPatients.Add(new Patient() { Name = "ALdo", LastName = "Garcia" });
-            return Ok(retrievedPatients);
+            
+
+            return Ok(_patientManager.GetPatients());
+        }
+
+        [HttpPost]
+        public IActionResult CreatePatients(string name, string lastname, int id)
+        {
+            
+            Patient createdPatient = _patientManager.CreatePatients(name, lastname, id);
+            return Ok(createdPatient);
+        }
+
+        [HttpPut]
+        public IActionResult UpdatePatients(int id, string name, string lastname)
+        {
+            //PatientManager patientManager = new PatientManager();
+            //Patient updatedPatient = _patientManager.UpdatePatient(id, name, lastname);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult DeletePatients(int id)
+        {
+            //PatientManager patientManager = new PatientManager();
+            //Patient deletedPatient = _patientManager.DeletePatient(id);
+            return Ok();
         }
     }
 }

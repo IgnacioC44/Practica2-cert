@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TwiYQrExwi2uq1k43SzoEJ0MejvscB1UnmZLr2m7dUiCY6x/c/DqQJNc4VlmM4GnlpPUqhb++Nf9UWEkjCWrRQ==",
+  "dgSpecHash": "nWNAKJHZSSSFTFcuJKXMGrB9ybbcPQQuMLnYxMY+9koDIgcJTIPt1pwcrwuX+y4CFMyV/8bctGBvK8USNwiObw==",
   "success": true,
   "projectFilePath": "D:\\Certificacion\\PracticaPrueba\\Practica2\\Logic\\Logic.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

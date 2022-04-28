@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Logic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -18,9 +19,14 @@ namespace Practica2
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -28,15 +34,16 @@ namespace Practica2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            string applicationName = Configuration.GetSection("ApplicationName").Value;
+            string envName = Configuration.GetSection("EnvName").Value;
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Practice 2 - Hospital Paso Al Infierno",
-                    Description = "HELL TO PASS SP",
+                    Title = "Practice 2 - Hospital Paso Al Infierno"+applicationName,
+                    Description = "HELL TO PASS SP at: "+envName,
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
@@ -51,6 +58,7 @@ namespace Practica2
                     }
                 });
             });
+            services.AddSingleton<PatientManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
